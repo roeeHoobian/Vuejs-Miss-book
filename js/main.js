@@ -26,7 +26,7 @@ new Vue({
     },
     created() {
         eventBus.$on('reviewAdded', () => {
-            console.log('thank!');
+
 
         })
     },

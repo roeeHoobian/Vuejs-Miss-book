@@ -14,8 +14,7 @@ export default {
     `,
     methods: {
         bookClicked() {
-            console.log('book clicked');
-            // this.$router.push('/')
+
 
         },
         emitSelect(bookId) {
