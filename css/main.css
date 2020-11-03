@@ -199,3 +199,30 @@ li a {
     text-align: center;
     margin-left: 20px;
 }
+
+.add-book-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.add-book-container ul {
+    list-style: none;
+    margin: 0;
+    background-color: #fff;
+}
+
+.add-book-container ul li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px;
+    border: 1px solid gray;
+    cursor: pointer;
+}
+
+.add-book-container ul li button {
+    margin-left: 10px;
+    height: 30px;
+}
