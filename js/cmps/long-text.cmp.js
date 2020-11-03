@@ -15,7 +15,8 @@ export default {
     `,
     computed: {
         showTxt() {
-            if (this.txt.length > 100 && !this.isShowMore) {
+            if (!this.txt) return
+            else if (this.txt.length > 100 && !this.isShowMore) {
                 this.buttonTxt = 'Read More';
                 return this.txt.slice(0, 99) + '...';
             } else {
