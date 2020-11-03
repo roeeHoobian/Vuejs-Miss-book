@@ -1,0 +1,201 @@
+body {
+    background-color: #a5e8f8;
+    color: #020516;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+ul {
+    padding: 0;
+}
+
+a {
+    padding: 5px;
+    color: #020516;
+}
+
+li a {
+    color: #020516;
+    text-decoration: none;
+    border: 1px solid #02051633;
+}
+
+.main-header {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 20px;
+    font-size: 1.5em;
+}
+
+.main-header nav a {
+    text-decoration: none;
+}
+
+.book-filter {
+    display: flex;
+    justify-content: center;
+}
+
+.book-filter div {
+    margin: 0 20px;
+}
+
+.books-cards-container {
+    display: flex;
+    justify-content: center;
+}
+
+.books-list {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.books-list li {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin: 10px;
+    padding: 15px;
+    background-color: #e4faff;
+    color: #020516;
+    width: 200px;
+    border-radius: 1em;
+}
+
+.books-list li div {
+    text-align: center;
+}
+
+.books-list img {
+    max-width: 200px;
+}
+
+.book-details-container {
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: left;
+    background-color: #fffef1;
+    padding: 20px;
+}
+
+.book-details {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-end;
+}
+
+.back-btn {
+    position: absolute;
+    top: -15px;
+    right: -15px;
+    border: none;
+    outline: none;
+    font-size: 1.5em;
+    font-weight: bold;
+    width: 110px;
+    height: 45px;
+    background-color: #e6454aef;
+    color: #fff;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.review-btn {
+    position: absolute;
+    top: -15px;
+    right: 100px;
+    border: none;
+    outline: none;
+    font-size: 1.5em;
+    font-weight: bold;
+    width: 150px;
+    height: 45px;
+    background-color: #ffdf71;
+    color: #fff;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.on-sale-img {
+    position: absolute;
+    width: 100px;
+    top: -13px;
+    left: 250px;
+    opacity: 0.9;
+}
+
+.book-img {
+    object-fit: none;
+}
+
+.book-info {
+    max-width: 400px;
+    margin-left: 85px;
+    padding-top: 17px;
+}
+
+.review-container {
+    display: flex;
+    margin-top: 20px;
+    border: 2px solid #fade73;
+}
+
+.review-container form {
+    padding: 0 5px 5px;
+    background-color: #ffdb5fde;
+}
+
+.review-container ul {
+    list-style: none;
+    margin: 0 0 0 10px;
+    padding: 0;
+}
+
+.review-container ul li {
+    width: 500px;
+    background-color: #fade73;
+    padding: 3px;
+    margin: 3px;
+}
+
+.review-container div {
+    flex-grow: 2;
+    margin-bottom: 20px;
+}
+
+.review-container div .text-area {
+    height: 20px;
+}
+
+.green {
+    color: cadetblue;
+}
+
+.red {
+    color: red;
+}
+
+.user-msg {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    right: 20px;
+    padding: 3px 10px;
+    background-color: #ffdf71;
+}
+
+.user-msg button {
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    margin-left: 20px;
+}
