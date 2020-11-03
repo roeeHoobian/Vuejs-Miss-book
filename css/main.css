@@ -31,6 +31,11 @@ li a {
     text-decoration: none;
 }
 
+.home-page {
+    display: flex;
+    justify-content: center;
+}
+
 .book-filter {
     display: flex;
     justify-content: center;

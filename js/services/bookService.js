@@ -1,3 +1,5 @@
+const BOOKS_KEY = 'booksDB';
+const GOOGLE_BOOKS_KEY = 'googleBooksDB';
 export const bookService = {
     query,
     getBookById,
@@ -1146,12 +1148,12 @@ function getBookById(bookId) {
     return Promise.resolve(gBooks[bookIdx]);
 }
 
-function saveToStorage(books) {
-    utilService.storeToStorage('booksDB', books);
+function saveToStorage(key, books) {
+    utilService.storeToStorage(key, books);
 }
 
-function loadFromStorage() {
-    return utilService.loadFromStorage('booksDB');
+function loadFromStorage(key) {
+    return utilService.loadFromStorage(key);
 }
 
 function addReview(bookId, review) {
@@ -1179,30 +1181,33 @@ function getReviews(bookId) {
 }
 
 function getGoogleBooks() {
-    return new Promise((resolve, reject) => {
-        resolve(googleBooks)
-    })
+    var googleBooks = loadFromStorage('googleBooksDB');
+    if (googleBooks) return Promise.resolve(googleBooks);
+    else {
+        return axios.get('https://www.googleapis.com/books/v1/volumes?q=flowers&filter=paid-ebooks')
+            .then(res => res.data.items)
+    }
 }
 
 function addGoogleBook(googleBook) {
     var book = {
         id: googleBook.id,
         title: googleBook.volumeInfo.title,
-        authors: googleBook.volumeInfo.authors.join(''),
+        authors: googleBook.volumeInfo.authors,
         description: googleBook.volumeInfo.subtitle,
-        categories: googleBook.volumeInfo.categories.join(''),
+        categories: googleBook.volumeInfo.categories,
         language: googleBook.volumeInfo.language,
         pageCount: googleBook.volumeInfo.pageCount,
         publishedDate: googleBook.volumeInfo.publishedDate,
         reviews: [],
         thumbnail: googleBook.volumeInfo.imageLinks.thumbnail,
-        //     listPrice: {
-        //         amount,
-        //         currencyCode,
-        //         isOnSale
-        //     }
+        listPrice: {
+            amount: 100,
+            currencyCode: 'USD',
+            isOnSale: false,
+        }
     }
-    console.log(book);
-
+    gBooks.push(book)
+    saveToStorage('booksDB', gBooks)
     console.log('google', googleBook);
 }

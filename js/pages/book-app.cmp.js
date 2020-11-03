@@ -49,12 +49,12 @@ export default {
         }
     },
     created() {
-        var booksFromStorage = bookService.loadFromStorage()
+        var booksFromStorage = bookService.loadFromStorage('booksDB')
         if (booksFromStorage) this.books = booksFromStorage;
         else {
             bookService.query()
                 .then((books => this.books = books))
-                .then(books => bookService.saveToStorage(books))
+                .then(books => bookService.saveToStorage('booksDB', books))
         }
     },
     components: {

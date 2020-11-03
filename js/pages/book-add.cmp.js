@@ -27,14 +27,13 @@ export default {
         },
         addGoogleBook(book) {
             bookService.addGoogleBook(book);
-
         }
     },
     created() {
         bookService.getGoogleBooks()
             .then(books => {
                 this.books = books
-                console.log(this.books)
+                bookService.saveToStorage('googleBooksDB', this.books)
             })
     }
 }

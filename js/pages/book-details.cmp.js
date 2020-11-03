@@ -45,9 +45,12 @@ export default {
     },
     computed: {
         getAuthor() {
+            if (!this.book.authors) return null
             return this.book.authors.join('');
+
         },
         getCategories() {
+            if (!this.book.categories) return null
             return this.book.categories.join('');
         },
         getPrice() {
